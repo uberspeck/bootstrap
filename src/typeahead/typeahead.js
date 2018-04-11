@@ -272,7 +272,7 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.debounce', 'ui.bootstrap
             }
           } else {
             resetMatches();
-            isNoResultsSetter(originalScope, true);
+            if (inputValue.length > 0 ) isNoResultsSetter(originalScope, true);
           }
         }
         if (onCurrentRequest) {
@@ -281,7 +281,7 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.debounce', 'ui.bootstrap
       }, function() {
         resetMatches();
         isLoadingSetter(originalScope, false);
-        isNoResultsSetter(originalScope, true);
+        if (inputValue.length > 0 ) isNoResultsSetter(originalScope, true);
       });
     };
 
